@@ -1,0 +1,79 @@
+-- Crear la tabla 'log'
+CREATE TABLE IF NOT EXISTS log (
+    time TIMESTAMP,
+    user VARCHAR(50)
+);
+
+-- Crear la tabla 'recomendacion'
+CREATE TABLE IF NOT EXISTS recomendacion (
+    fecha TIMESTAMP,
+    usuario VARCHAR(50),
+    profesional VARCHAR(100)
+);
+
+-- Crear la tabla 'stats'
+CREATE TABLE IF NOT EXISTS stats (
+    time TIMESTAMP,
+    value VARCHAR(50)
+);
+
+-- Crear la tabla 'users'
+CREATE TABLE IF NOT EXISTS users (
+    user VARCHAR(25),
+    password VARCHAR(25),
+    type VARCHAR(3),
+    verified BOOLEAN,
+    last_update TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Crear la tabla 'profesional'
+CREATE TABLE IF NOT EXISTS profesional (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre VARCHAR(100),
+    email VARCHAR(100),
+    edad INT,
+    genero VARCHAR(50),
+    profesion VARCHAR(50),
+    universidad VARCHAR(50),
+    especializando BOOLEAN,
+    recien_egresado BOOLEAN,
+    area VARCHAR(1),
+    otras_areas VARCHAR(20),
+    enfoque VARCHAR(1),
+    enfoque_secundario VARCHAR(1),
+    atiende_neurodivergencia BOOLEAN,
+    atiende_mayores BOOLEAN,
+    atiende_menores BOOLEAN,
+    region VARCHAR(50),
+    atiende_presencial BOOLEAN,
+    direccion VARCHAR(50) DEFAULT NULL,
+    resumen_academico TEXT,
+    resumen_profesional TEXT,
+    presentacion TEXT,
+    registro_sis VARCHAR(30),
+    img TEXT,
+    iframe TEXT,
+    ultimo_cambio TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    rol_version TEXT
+);
+
+-- Crear la tabla 'contacto'
+CREATE TABLE IF NOT EXISTS contacto (
+    fecha TIMESTAMP,
+    nombre VARCHAR(100),
+    telefono INT(11)
+);
+
+-- Crear la tabla 'formulario'
+CREATE TABLE IF NOT EXISTS formulario (
+    fecha TIMESTAMP,
+    nombre VARCHAR(50),
+    edad INT,
+    preferencia_de_genero BOOLEAN,
+    ha_ido_a_terapia BOOLEAN,
+    prefiere_recien_egresado BOOLEAN,
+    motivo_de_consulta BOOLEAN,
+    enfoque VARCHAR(1),
+    neurodivergente BOOLEAN,
+    diagnostico_previo TEXT DEFAULT NULL
+);
